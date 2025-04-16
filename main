@@ -1,0 +1,13 @@
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calculatrice = new Calculator();
+
+        // Exemple d'utilisation
+        System.out.println("Résultat de '2 + 3 * 4' : " + calculatrice.evaluateMathExpression("2 + 3 * 4"));
+        System.out.println("Résultat de '10 - 3 + 2' : " + calculatrice.evaluateMathExpression("10 - 3 + 2"));
+        System.out.println("Résultat de '(2 + 3) * (4 + 1)' : " + calculatrice.evaluateMathExpression("(2 + 3) * (4 + 1)"));
+        System.out.println("Résultat de '-(-5 + 3) * 2' : " + calculatrice.evaluateMathExpression("-(-5 + 3) * 2"));
+    }
+}
