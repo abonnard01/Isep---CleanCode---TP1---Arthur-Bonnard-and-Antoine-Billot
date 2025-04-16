@@ -63,11 +63,20 @@ public class Calculator {
 
     private double lireNombre() {
         StringBuilder constructeur = new StringBuilder();
+    
         while (nonTermine() && (estChiffre(caractereActuel()) || caractereActuel() == '.')) {
             constructeur.append(caractereActuel());
             avancer();
         }
-        return Double.parseDouble(constructeur.toString());
+
+        try {
+            return Double.parseDouble(constructeur.toString());
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(
+                "❌ Erreur : un nombre mal formé a été rencontré à la position " 
+                + position + ". Vérifiez votre expression : \"" + expression + "\""
+            );
+        }
     }
 
     private boolean estChiffre(char c) {
